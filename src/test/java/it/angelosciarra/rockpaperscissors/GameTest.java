@@ -32,7 +32,7 @@ public class GameTest {
 	private Game g;
 	
 	@Test
-	public void whenPlayersPlaySameShapeIsTie(){
+	public void whenPlayersPlaySameShapeOutcomeIsTie(){
 		givenPlayersPlaySameShape();
 		thenGameOutcomeIsTie();
 	}
@@ -41,28 +41,28 @@ public class GameTest {
 	public void whenP1PlaysRockAndP2PlaysScissorsP1Wins() {
 		givenP1PlaysRock();
 		givenP2PlaysScissors(); 
-		thenOutcomeIsP1Wins();
+		thenGameOutcomeIsP1Wins();
 	}
 
 	@Test
 	public void whenP1PlaysRockAndP2PlaysPaperP2Wins(){
 		givenP1PlaysRock();
 		givenP2PlaysPaper();
-		thenOutcomeIsP2Wins();
+		thenGameOutcomeIsP2Wins();
 	}
 	
 	@Test
 	public void whenP1PlaysPaperAndP2PlaysScissorsP2Wins(){
 		givenP1PlaysPaper(); 
 		givenP2PlaysScissors();
-		thenOutcomeIsP2Wins(); 
+		thenGameOutcomeIsP2Wins(); 
 	}
 	
 	@Test
 	public void whenP1PlaysScissorsAndP2PlaysRockP2Wins(){
 		givenP1PlaysScissors(); 
 		givenP2PlaysRock(); 
-		thenOutcomeIsP2Wins();
+		thenGameOutcomeIsP2Wins();
 	}
 	
 	@Test
@@ -85,7 +85,7 @@ public class GameTest {
 		p1 = new Player("P1", Shape.PAPER);
 	}
 
-	private void thenOutcomeIsP2Wins() {
+	private void thenGameOutcomeIsP2Wins() {
 		g = new Game(p1, p2);
 		assertThat(g.outcome(), is(Game.Outcome.P2WINS));
 	}
@@ -94,7 +94,7 @@ public class GameTest {
 		p2 = new Player("P2", Shape.PAPER);
 	}
 
-	private void thenOutcomeIsP1Wins() {
+	private void thenGameOutcomeIsP1Wins() {
 		g = new Game(p1, p2); 
 		assertThat(g.outcome(), is(Game.Outcome.P1WINS));
 	}
