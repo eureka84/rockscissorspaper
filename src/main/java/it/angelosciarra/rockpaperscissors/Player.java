@@ -1,34 +1,32 @@
 package it.angelosciarra.rockpaperscissors;
 
-import java.util.Random;
-
+/**
+ * Player has a name and knows the shape he will play.
+ * 
+ * @author angelosciarra
+ *
+ */
 public class Player {
 	
-	private static Shape[] shapes = {Shape.ROCK, Shape.SCISSORS, Shape.PAPER};
-	private String name; 
-	private Shape shape; 
+	private final String name; 
+	private final Shape shape; 
 	
-	public Player(String name) {
-		this.name = name;
-	}
-	
-	public Player(String name, Shape shape) {
-		this(name); 
+	public Player(final String name, final Shape shape) {
+		this.name = name; 
 		this.shape = shape; 
 	}
 	
-	public Shape play(){
-		if (this.shape == null) {
-			Random r = new Random();
-			int i = r.nextInt(3);
-			this.shape = shapes[i];
-		} 
-		return this.shape;
+	public Shape getShape(){
+		return shape;
 	}
 	
 	@Override
 	public String toString() {
-		return this.name + " has played "+this.shape;
+		return name + " has played "+shape;
+	}
+	
+	public boolean beats(Player other){
+		return shape.beats(other.shape);
 	}
 
 }
