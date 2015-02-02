@@ -12,7 +12,7 @@ public enum Shape {
 	SCISSORS("PAPER"), 
 	PAPER("ROCK"); 
 	
-	private String beats;
+	private final String beats;
 
 	private Shape(final String beats) {
 		this.beats = beats;

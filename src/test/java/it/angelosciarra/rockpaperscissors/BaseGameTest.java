@@ -6,22 +6,22 @@ import it.angelosciarra.rockpaperscissors.RockScissorsPaperGame.Outcome;
 
 public class BaseGameTest {
 	
-	protected Player p1; 
-	protected Player p2;
-	protected RockScissorsPaperGame g;
+	protected Player player1; 
+	protected Player player2;
+	protected RockScissorsPaperGame game;
 	protected Outcome outcome;
 	
 	protected void givenPlayerPlays(String player, Shape shape) {
 		if(player.equals("P1")){
-			p1 = new Player("P1", shape);
+			player1 = new Player("P1", shape);
 		} else {
-			p2 = new Player("P2", shape); 
+			player2 = new Player("P2", shape); 
 		}
 	}
 	
 	protected void whenGameIsPlayed() {
-		g = new RockScissorsPaperGame(p1,p2);
-		outcome = g.outcome();
+		game = new RockScissorsPaperGame(player1,player2);
+		outcome = game.outcome();
 	}
 	
 	protected void thenPlayer1Wins() {

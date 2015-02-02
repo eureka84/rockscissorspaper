@@ -20,9 +20,10 @@ import org.slf4j.LoggerFactory;
  */
 public class RockScissorsPaperGame {
 
+	private static final Logger logger = LoggerFactory.getLogger(RockScissorsPaperGame.class);
+	
 	private final Player player1;
 	private final Player player2;
-	private static final Logger logger = LoggerFactory.getLogger(RockScissorsPaperGame.class);
 
 	public RockScissorsPaperGame(final Player p1, final Player p2) {
 		logInitialization(p1, p2);

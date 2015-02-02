@@ -5,7 +5,7 @@ import org.junit.Test;
 public class PaperBeatsRockTest extends BaseGameTest{
 	
 	@Test
-	public void whenP1PlaysRockAndP2PlaysPaperP2Wins(){
+	public void givenP2PlaysPaperP2Wins(){
 		givenPlayerPlays("P1", Shape.ROCK);
 		givenPlayerPlays("P2", Shape.PAPER); 
 		whenGameIsPlayed();
@@ -13,7 +13,7 @@ public class PaperBeatsRockTest extends BaseGameTest{
 	}
 	
 	@Test
-	public void whenP1PlaysPaperAndP2PlaysRockP1Wins(){
+	public void givenP1PlaysPaperP1Wins(){
 		givenPlayerPlays("P2", Shape.ROCK);
 		givenPlayerPlays("P1", Shape.PAPER); 
 		whenGameIsPlayed();
