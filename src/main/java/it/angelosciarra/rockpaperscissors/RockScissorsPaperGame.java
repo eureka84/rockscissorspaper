@@ -43,11 +43,7 @@ public class RockScissorsPaperGame {
 		return outcome;
 	}
 
-	public enum Outcome{
-		TIE, 
-		P1WINS,
-		P2WINS
-	}
+	
 	
 	private void logInitialization(final Player p1, final Player p2) {
 		logger.info("----------------");
@@ -61,5 +57,9 @@ public class RockScissorsPaperGame {
 		return outcome;
 	}
 	
-	
+	public enum Outcome{
+		TIE, 
+		P1WINS,
+		P2WINS
+	}	
 }
