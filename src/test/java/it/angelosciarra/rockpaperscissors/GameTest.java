@@ -66,6 +66,20 @@ public class GameTest {
 	}
 	
 	@Test
+	public void whenP1PlaysScissorsAndP2PlaysPaperP1Wins(){
+		givenP1PlaysScissors(); 
+		givenP2PlaysPaper(); 
+		thenGameOutcomeIsP1Wins();
+	}
+	
+	@Test
+	public void whenP1PlaysPaperAndP2PlaysRockP1Wins(){
+		givenP1PlaysPaper(); 
+		givenP2PlaysRock(); 
+		thenGameOutcomeIsP1Wins();
+	}
+	
+	@Test
 	public void testGameOutcomeIsNotNull() throws Exception {
 		p1 = new Player("P1");
 		p2 = new Player("P2");
